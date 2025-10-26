@@ -1,0 +1,22 @@
+body{
+  font-family: Arial, sans-serif;
+  background: WhiteSmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container{
+  text-align:center;
+}
+.quote-box{
+  background: black;
+  padding: 30px;
+  border-radius: 10px;
+}
+button{
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
