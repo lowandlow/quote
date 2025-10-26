@@ -1,13 +1,18 @@
+let quotes=[];
 async function generateQuote(){
   const quoteElement=document.getElementById('quote');
   try{
     //Fetch quote from quotable api
-  const response=await fetch('https://zenquotes.io/api/random');
+    if(quotes.length==0){
+  const response=await fetch('https://type.fit/api/quotes');
     if(!response.ok){
       throw new Error('Failed to fetch quote');
     }
-    const data=await response.json();
-    quoteElement.innerText=`${data.content}\n- ${data.author}`;
+    quotes=await response.json();
+    }
+    const randomIndex=Math.floor(Math.random()*quotes.length);
+    const quote=quotes[randomIndex];
+    quoteElement.innerText=`${quote.text}\n- ${quote.author}`;
   }
   catch(error){
     quoteElement.innerText="Could not fecth quote";
