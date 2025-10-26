@@ -7,7 +7,7 @@ async function generateQuote(){
       throw new Error('Failed to fetch quote');
     }
     const data=await response.json();
-    quoteElement.innerText="${data.content}"\n- ${data.author};
+    quoteElement.innerText=`${data.content}\n- ${data.author}`;
   }
   catch(error){
     quoteElement.innerText="Could not fecth quote";
